@@ -1,0 +1,73 @@
+.nowPlaying{
+    font-family:  Quicksand-Regular;
+    width: 480px;
+    height: min-content;
+    margin-left: 5vw;
+    margin-top: 40px;
+    display: none;
+    opacity: 0;
+    transition: .4s ;
+}
+.nowPlaying h3{
+    font-size: 20px ;
+    margin: 20px 0 10px 0;
+    width: 150%;
+    word-wrap: normal;
+}
+.nowPlaying h4{
+    font-size: 20px ;
+    opacity: .5;
+    margin: 10px 0;
+}
+.nowPlaying button{
+    border: 3px solid white;
+    background-color: white;
+    color:black;
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    padding: 4px 15px;
+    border-radius: 25px;
+    line-height: 1.5;
+    transition: 0.1s ease-in-out;
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+.nowPlaying button:hover {
+    background-color: black;
+    color: white;
+    fill: white;
+}
+
+.nowPlaying button:hover svg path{
+    color: white;
+    fill: white;
+}
+.nowPlaying .btns {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.nowPlaying .btns button svg{
+    background-color: transparent;
+    width: 28px;
+    margin-left: 10px;
+}
+
+.nowPlaying .thumbnail{
+    width: 480px;
+    height: 270px;
+    padding: 0;
+    background-color: aliceblue;
+    overflow: hidden;
+    /* display: flex; */
+    vertical-align: middle;
+}
+.nowPlaying .thumbnail img{
+    width: 100%;
+    height: auto;
+    transform: scale(1.2);
+}

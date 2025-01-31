@@ -1,0 +1,28 @@
+#titleBar{
+    padding: 5px 0;
+    border-bottom: 1px solid #6666;
+    width: 100%;
+    height: 20px;
+    top: 0;
+    margin-bottom: 5px;
+    app-region: drag;
+    position: fixed;
+}
+/* #titleBar #titleBarButtons{
+    width: 120px;
+    margin-left: calc(100% - 120px);
+}
+
+
+#titleBar #titleBarButtons button{
+    border: none;
+    margin-left: 5px;
+    padding-right: 10px;
+}
+
+#titleBar #titleBarButtons button svg{
+    background-color: transparent;
+    width: 22px;
+    height: 22px;
+
+} */

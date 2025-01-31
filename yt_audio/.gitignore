@@ -1,0 +1,4 @@
+content/songs/*
+content/thumbnails/*
+etc
+node_modules

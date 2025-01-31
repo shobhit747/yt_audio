@@ -1,0 +1,36 @@
+.player{
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 10vw);
+    padding: 30px 5vw;
+    border-top: 1px solid #6666;
+    position: fixed;
+    bottom: 0;
+    vertical-align: baseline;
+}
+.player .controls button{
+    border: none;
+    opacity: 0.5;
+    transition: 0.2s;
+}
+.player .controls button:hover{
+    opacity: 1;
+}
+.player .controls .pausebtn{
+    display: none;
+}
+.player .playerBar{
+    width: 45vw;
+    background-color: white;
+    height: 5px;
+    margin: 25px 50px ;
+    /* position: absolute; */
+}
+.player .playerBar2{
+    width: 0;
+    color: #801A86;
+    background-color: #801A86;
+    height: 5px;
+    /* margin: 25px 50px ; */
+    position: relative;/
+}

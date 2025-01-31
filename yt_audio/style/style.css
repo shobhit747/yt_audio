@@ -1,0 +1,121 @@
+@font-face {
+    font-family: Quicksand-Regular;
+    src: url(./fonts/Quicksand-Regular.ttf);
+}
+@font-face {
+    font-family: Quicksand-Medium;
+    src: url(./fonts/Quicksand-Medium.ttf);
+}
+@font-face {
+    font-family: Silkscreen-Regular;
+    src: url(./fonts/Silkscreen-Regular.ttf);
+}
+
+*{
+    background-color: black;
+    color:white;
+    padding: 0;
+    margin: 0;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    /* font-family: Quicksand-Medium; */
+    /* overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden; */
+}
+
+header{
+    margin-top: 30px;
+    font-family: Quicksand-Medium;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #6666;
+}
+
+#app_name{
+    font-size: 28px;
+    font-family: Silkscreen-Regular;
+    color: white;
+    padding: 20px 0;
+    padding-left: 5%;
+    width: 30%;
+}
+.urlForm{
+    display: flex;
+    flex-direction: row;
+    height: min-content;
+    padding: 15px;
+    width: 70%;
+}
+.urlForm input{
+    padding: 6px 12px;
+    font-size: 18px;
+    border-radius: 25px;
+    text-align: center;
+    border: 2px solid rgb(63, 63, 63);
+    opacity: 0.7;
+    outline: none;
+    width: 500px;
+    margin-right: 25%;
+    transition: 0.2s;
+}
+.urlForm input:hover{
+    opacity: 1;
+}
+.urlForm .addButton{
+    margin: 0 10px 0 10px;
+}
+.urlForm .pasteButton{
+    margin: 0 10px 0 auto;
+}
+.urlForm .addButton{
+    border: 3px solid white;
+    background-color: white;
+    color:black;
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    padding: 4px 15px;
+    border-radius: 25px;
+    line-height: 1.5;
+    margin-right: calc(5vw - 15px);
+    transition: 0.1s ease-in-out;
+}
+.urlForm .pasteButton{
+    border: 3px solid white;
+    background-color: white;
+    color:black;
+    padding: 2px 5px;
+    border-radius: 24px;
+    transition: 0.1s ease-in-out;
+}
+.urlForm button:hover{
+    background-color: black;
+    color: white;
+    fill: white;
+}
+
+.urlForm button .downloadIcon{
+    background-color: transparent;
+    height: 34px;
+    width: auto;
+    color: white;
+}
+
+.urlForm button .pasteIcon{
+    background-color: transparent;
+    height: 24px;
+    width: 24px;
+    color: white;
+    padding: 5px;
+    border-radius: 100%;
+}
+
+
+.urlForm button:hover svg path{
+    fill: white;
+
+}

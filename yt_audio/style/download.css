@@ -1,0 +1,105 @@
+@font-face {
+    font-family: Quicksand-Light;
+    src: url(./fonts/Quicksand-Light.ttf);
+}
+@font-face {
+    font-family: Quicksand-Regular;
+    src: url(./fonts/Quicksand-Regular.ttf);
+}
+.askForDownload{
+    font-family:  Quicksand-Regular;
+    width: 480px;
+    height: min-content;
+    margin-left: 5vw;
+    margin-top: 40px;
+    display: none;
+    opacity: 0;
+    transition: .4s ;
+}
+.askForDownload h3{
+    font-size: 20px ;
+    margin: 20px 0 10px 0;
+    width: 150%;
+    word-wrap: normal;
+}
+.askForDownload h4{
+    font-size: 20px ;
+    opacity: .5;
+    margin: 10px 0;
+}
+.askForDownload button{
+    border: 3px solid white;
+    background-color: white;
+    color:black;
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    padding: 4px 15px;
+    border-radius: 25px;
+    line-height: 1.5;
+    transition: 0.1s ease-in-out;
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+.askForDownload button:hover {
+    background-color: black;
+    color: white;
+    fill: white;
+}
+
+.askForDownload button:hover svg path{
+    color: white;
+    fill: white;
+}
+.askForDownload .btns {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.askForDownload .btns button svg{
+    background-color: transparent;
+    width: 28px;
+    margin-left: 10px;
+}
+
+.askForDownload .thumbnail{
+    width: 480px;
+    height: 270px;
+    padding: 0;
+    background-color: aliceblue;
+    overflow: hidden;
+    /* display: flex; */
+    vertical-align: middle;
+}
+.askForDownload .thumbnail img{
+    width: 100%;
+    height: auto;
+    transform: scale(1.2);
+}
+
+
+.showPiece{
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
+    text-align: center;
+}
+.showPiece svg{
+    margin-top: 70px;
+    width: 60%;
+    height: auto;
+    margin-bottom: 50px;
+}
+.showPiece h2{
+    font-family: Quicksand-Regular;
+    font-size: 20px;
+    opacity: .8;
+    font-style: italic;
+}
+
+hr{
+    transition: 2s;
+}
