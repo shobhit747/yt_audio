@@ -2,3 +2,6 @@ content/songs/*
 content/thumbnails/*
 etc
 node_modules
+content/main.json
+content/temp.json
+content/url.json
