@@ -12,6 +12,7 @@
     border: none;
     opacity: 0.5;
     transition: 0.2s;
+    background-color: black;
 }
 .player .controls button:hover{
     opacity: 1;

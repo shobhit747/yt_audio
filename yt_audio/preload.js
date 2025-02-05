@@ -7,5 +7,7 @@ contextBridge.exposeInMainWorld('electronAPI',{
     downloadSong:(data)=>ipcRenderer.send('downloadSong',data),
     downloadSongReply:(callback)=>ipcRenderer.on('downloadSongReply',(_event,arg)=>callback(arg)),
     loadSongList:()=>ipcRenderer.send('loadSongList'),
-    loadSongListReply:(callback)=>ipcRenderer.on('loadSongListReply',(_event,arg)=>callback(arg))
+    loadSongListReply:(callback)=>ipcRenderer.on('loadSongListReply',(_event,arg)=>callback(arg)),
+    deleteSong:(songName)=>ipcRenderer.send('deleteSong',songName),
+    deleteSongReply:(callback)=>ipcRenderer.on('deleteSongReply',(_event,arg)=>callback(arg))
 })

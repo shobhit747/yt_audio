@@ -90,6 +90,18 @@ const createWindow = () =>{
         exec('pipenv run python3 main.py reset');
     })
     win.loadFile('music_gallery.html');
+
+    ipcMain.on('deleteSong',(event,songName)=>{
+        console.log(songName);
+        exec(`pipenv run python3 main.py deleteSong "${songName}"`,(err,stdout,stderr)=>{
+            if(!err){
+                console.log(`stdout: ${stdout}`);
+                event.reply('deleteSongReply');
+            }else{
+                console.log(err);
+            }
+        })
+    })
 }
 
 

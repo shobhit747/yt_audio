@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./style/download.css">
     <link rel="stylesheet" href="./style/player.css">
     <link rel="stylesheet" href="./style/nowPlaying.css">
+    <link rel="stylesheet" href="./style/deleteWarning.css">
     <script defer src="./render.js"></script>
 </head>
 <body>
@@ -86,6 +87,18 @@
                 </div>
                 <h3 id="songTitle">Dusk Till Down</h3>
                 <h4 id="filesize">4.06 MB</h4>
+                <div class="deleteBtns">
+                    <button id="deleteSong">
+                        Delete
+                        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 14H40M20 22V34M28 22V34M10 14L12 38C12 39.0609 12.4214 40.0783 13.1716 40.8284C13.9217 41.5786 14.9391 42 16 42H32C33.0609 42 34.0783 41.5786 34.8284 40.8284C35.5786 40.0783 36 39.0609 36 38L38 14M18 14V8C18 7.46957 18.2107 6.96086 18.5858 6.58579C18.9609 6.21071 19.4696 6 20 6H28C28.5304 6 29.0391 6.21071 29.4142 6.58579C29.7893 6.96086 30 7.46957 30 8V14" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                    </button>
+                    <div class="deleteWarning" id="deleteWarning">
+                        <button class="cancelDelete" id="cancelDelete">Cancel</button>
+                        <button class="deleteConfirm" id="deleteConfirm" style=" width: max-content;">Confirm Delete</button>
+                    </div>
+                </div>
             </div>
             <div class="askForDownload" id="askForDownload">
                 <div class="thumbnail">

@@ -202,6 +202,7 @@ function playMusic(num){
         playbtn.removeAttribute('disabled');
         pausebtn.removeAttribute('disabled');
     }
+    resetDeleteBtn();
 }
 
 let audioContainer = document.getElementById('audioContainer');
@@ -242,3 +243,37 @@ document.addEventListener('keypress',(event)=>{
     
 })
 
+
+let deleteSongBtn = document.getElementById("deleteSong");
+let deleteConfirm = document.getElementById("deleteConfirm");
+let cancelDelete = document.getElementById("cancelDelete");
+let deleteWarning = document.getElementById("deleteWarning");
+
+deleteSongBtn.onclick = () =>{
+    deleteSongBtn.style.display = "none";
+    deleteWarning.style.display = "flex";
+}
+
+cancelDelete.onclick = () =>{
+    deleteWarning.style.display = "none";
+    deleteSongBtn.style.display = "flex";
+}
+
+function resetDeleteBtn(){
+    deleteWarning.style.display = "none";
+    deleteSongBtn.style.display = "flex";
+}
+
+deleteConfirm.onclick = () =>{
+    let song = document.getElementById("songTitle").innerText;
+    window.electronAPI.deleteSong(song);
+}
+
+window.electronAPI.deleteSongReply((arg)=>{
+    window.electronAPI.loadSongList();
+    resetPlayer();
+    let showPiece = document.getElementById("showPiece");
+    let nowPlaying = document.getElementById("nowPlaying");
+    nowPlaying.style.display = "none";
+    showPiece.style.display = "block";
+})

@@ -98,6 +98,23 @@ def resetTemp():
 
     print('temp File reset')
 
+def deleteSong(songName):
+    with open('./content/main.json') as mainfile:
+        main_data = json.load(mainfile)
+        main_data.pop(songName)
+
+    with open('./content/main.json','w') as mainFileWrite:
+        json.dump(main_data,mainFileWrite,sort_keys=True,indent=4)
+
+    for ext in ['m4a','mp3','flac','mp4','wav','wma','aac','alac','aiff']:
+        if os.path.exists(f'./content/songs/{songName}.{ext}'):
+            os.remove(f'./content/songs/{songName}.{ext}')
+            break
+    for ext in ['jpg','png','jpeg']:
+        if os.path.exists(f'./content/thumbnails/{songName}.{ext}'):
+            os.remove(f'./content/thumbnails/{songName}.{ext}')
+            break
+
 with open('./content/url.json') as jsonFile:
     # print('s :',sys.argv)
     json_content = json.load(jsonFile)
@@ -110,6 +127,8 @@ with open('./content/url.json') as jsonFile:
         print('retirve_complete')
     elif(sys.argv[1] == 'reset'):
         resetTemp()
+    elif(sys.argv[1] == 'deleteSong'):
+        deleteSong(sys.argv[2])
     jsonFile.close()
     
 sys.exit()
