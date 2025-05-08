@@ -69,6 +69,8 @@ window.electronAPI.savedUrlJsonReply((arg)=>{
     let filesize = document.querySelector("#askForDownload h4")
 
     // console.log(thumbnail,title,filesize);
+    console.log(arg);
+    
     
     thumbnail.setAttribute('src',songData['thumbnail_url']);
     title.innerHTML = songData['title'];

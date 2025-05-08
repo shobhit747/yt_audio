@@ -5,35 +5,37 @@ import sys
 import os
 import json
 
+
 def download_thumbnail(url,name):
     img_data = requests.get(url).content
     extension = url.split(".")
-    thumbnail_name = f"{name}.{extension[-1]}"
-    with open(f'./content/thumbnails/{thumbnail_name}','wb') as handler:
+    thumbnail_name = f"{name}.{extension[-1][:3]}"
+    path = os.path.realpath(f'./content/thumbnails/{thumbnail_name}')
+    with open(os.path.normpath(path),'wb') as handler:
         handler.write(img_data)
 
-    return extension[-1]
+    return extension[-1][:3]
 
 
 def download_song(url,path_save = './content/songs'):
-    video_data = YouTube(url,'WEB',on_progress_callback=on_progress)
+    print(f"url : {url}")
+    video_data = YouTube(url,'WEB',on_progress_callback=on_progress,)
     audio = video_data.streams.get_audio_only()
-
+    print(video_data)
     title = audio.title
     audio.download(path_save)
     extension = download_thumbnail(video_data.thumbnail_url,audio.title)
-
     
 
     for ext in ['m4a','mp3','flac','mp4','wav','wma','aac','alac','aiff']:
         fileExists = os.path.exists(f'./content/songs/{title}.{ext}')
         if(fileExists):
-            songPath = f'./content/songs/{title}.{ext}'
+            songPath = os.path.realpath(f'./content/songs/{title}.{ext}')
             break
 
     paths = {
         'filePath':songPath,
-        'thumbnailPath':f'./content/thumbnails/{title}.{extension}'
+        'thumbnailPath':os.path.realpath(f'./content/thumbnails/{title}.{extension}')
     }
 
     print(paths)

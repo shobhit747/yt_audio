@@ -42,6 +42,9 @@ const createWindow = () =>{
                                     let jsonData = JSON.parse(retrivedData);
                                     console.log(jsonData);
                                     event.reply('saveUrlJsonReply',jsonData);
+                                }else{
+                                    console.log(err);
+                                    
                                 }
                                 
                                 
@@ -68,13 +71,18 @@ const createWindow = () =>{
     })
     ipcMain.on('downloadSong',(event,data)=>{
         console.log(data);
-        exec('python3 main.py download',(err,stdout,stderr)=>{
+        exec('pipenv run python3 main.py download',(err,stdout,stderr)=>{
+            console.log(stdout);
+            
             if(!err){
                 console.log('download complete');
                 fs.readFile(path.resolve('./content/main.json'),(err,data)=>{
                     let mainData = JSON.parse(data)
                     event.reply('downloadSongReply',mainData)
                 })
+                
+            }else{
+                console.log(err);
                 
             }
         })
