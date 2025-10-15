@@ -83,7 +83,7 @@ def retrive_song(url,path_save = './content/songs'):
     
     temp_json_value = {audio.title:audio_data}
     with open('./content/temp.json') as f:
-        data = json.load(f)
+        data = {}
         data.update(temp_json_value)
         # print(data) 
 
